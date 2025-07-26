@@ -1,0 +1,5 @@
+* Test Lisp Game
+** TODO Test fase
+- [ ] Create project
+- [ ] Model test scene
+- [ ] Implement basic movement
