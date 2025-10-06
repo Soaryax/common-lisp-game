@@ -24,6 +24,11 @@
   (with-mode-3d (*camera*)
     (draw-cube-v transform-position transform-scale cube-shape-color)))
 
+(ecs:define-system camera-control-system
+  (:components-ro (transform character-controller))
+  (setf (camera3d-position *camera*) (vec3 (+ (vx transform-position) 10) 10 (+ (vz transform-position) 10)))
+  (setf (camera3d-target *camera*) transform-position))
+
 (ecs:define-system character-control-system
   (:components-ro (character-controller)
    :components-rw (transform)
